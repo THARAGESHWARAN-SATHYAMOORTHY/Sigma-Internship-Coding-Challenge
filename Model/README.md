@@ -41,3 +41,6 @@ Example Usage:
     print(pd.DataFrame(transition_distribution, index=['Bear', 'Flat', 'Bull'], columns=['Bear', 'Flat', 'Bull']))
     print("\nPortfolio Value:", portfolio_value)
     print("Optimal Buy Indices:", optimal_buy_indices)
+
+
+![alt text](https://github.com/THARAGESHWARAN-SATHYAMOORTHY/Sigma-Internship-Coding-Challenge/blob/main/Model/img/plot1.png?raw=true)
