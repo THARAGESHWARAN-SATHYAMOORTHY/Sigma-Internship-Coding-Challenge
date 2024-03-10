@@ -43,4 +43,6 @@ Example Usage:
     print("Optimal Buy Indices:", optimal_buy_indices)
 
 
+Close vs Predicted Close
+
 ![alt text](https://github.com/THARAGESHWARAN-SATHYAMOORTHY/Sigma-Internship-Coding-Challenge/blob/main/Model/img/plot1.png?raw=true)
