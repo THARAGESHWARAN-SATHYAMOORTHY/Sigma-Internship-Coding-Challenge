@@ -1,5 +1,7 @@
 # Prediction Model and Optimal Index's
 
+I have done this additional prediction model and visualized the actual and predicted results.
+
 Example Usage:
 
     ticker = 'AAPL'
