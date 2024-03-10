@@ -2,7 +2,7 @@
 
 Example usage of the model:
 
-    model = MarketModel('FIBBG000B9XRY4', '2020-01-01', '2020-12-31')
+    model = MarketModel('FIBBG000B9XRY4', '2023-01-01', '2023-12-31')
     model.fetch_data()
     model.calculate_returns()
     model.classify_states()
