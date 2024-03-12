@@ -1,6 +1,6 @@
 # Prediction Model and Optimal Index's
 
-I have done this additional prediction model and visualized the actual and predicted results.
+I have done this additional prediction model and visualized the actual and predicted results. This is an example of how the models works on the actual and predicted data.
 
 Example Usage:
 
