@@ -8,39 +8,25 @@ The `MarketModel` class is designed to perform market analysis and simulate a ba
 
 Class Initialization
 
-```python
-__init__(ticker, start_date, end_date)
-```
-
-- **ticker**: Stock ticker symbol (e.g., 'FIBBG000B9XRY4').
-- **start_date**: Start date for historical data (e.g., '2023-01-01').
-- **end_date**: End date for historical data (e.g., '2023-12-31').
+    __init__(ticker, start_date, end_date)
+    
+    - **ticker**: Stock ticker symbol (e.g., 'FIBBG000B9XRY4').
+    - **start_date**: Start date for historical data (e.g., '2023-01-01').
+    - **end_date**: End date for historical data (e.g., '2023-12-31').
 
 This method initializes the `MarketModel` class with the specified stock ticker and date range. It also sets up essential variables for subsequent analysis.
 
-Data Fetching
+Data Fetching `fetch_data()` : Fetches historical stock prices from QuantRocket.
 
-fetch_data() : Fetches historical stock prices from QuantRocket.
+Returns Calculation `calculate_returns()` : Calculates daily returns based on closing prices.
 
-Returns Calculation
+State Classification `classify_states()` : Classifies market states as Bear, Flat, or Bull.
 
-calculate_returns() : Calculates daily returns based on closing prices.
+Value Function Implementation `implement_value_function()` : Implements a basic trading strategy value function.
 
-State Classification
+Transition Distribution Calculation `calculate_transition_distribution()` : Calculates transition distributions between market states.
 
-classify_states() : Classifies market states as Bear, Flat, or Bull.
-
-Value Function Implementation
-
-implement_value_function() : Implements a basic trading strategy value function.
-
-Transition Distribution Calculation
-
-calculate_transition_distribution() : Calculates transition distributions between market states.
-
-Results Printing
-
-print_results() : Prints portfolio value, optimal buy indices, and transition distribution.
+Results Printing `print_results()` : Prints portfolio value, optimal buy indices, and transition distribution.
 
 Example usage of the model:
 
