@@ -6,7 +6,7 @@
 
 The `MarketModel` class is designed to perform market analysis and simulate a basic trading strategy based on historical stock price data. The `MarketModel` class utilizes the QuantRocket API for fetching historical price data and Pandas/Numpy for data manipulation and analysis. The primary goal is to demonstrate a simple trading strategy simulation based on predefined market states.
 
-Class Initialization
+### Class Initialization
 
     __init__(ticker, start_date, end_date)
     
@@ -23,7 +23,7 @@ This method initializes the `MarketModel` class with the specified stock ticker 
 - Transition Distribution Calculation `calculate_transition_distribution()` : Calculates transition distributions between market states.
 - Results Printing `print_results()` : Prints portfolio value, optimal buy indices, and transition distribution.
 
-Example usage of the model:
+### Example usage of the model:
 
     model = MarketModel('FIBBG000B9XRY4', '2023-01-01', '2023-12-31')
     model.fetch_data()
@@ -33,7 +33,7 @@ Example usage of the model:
     model.calculate_transition_distribution()
     model.print_results()
 
-Output:
+### Output:
 
     Portfolio Value V(d): 17
     Optimal Index: [5, 7, 11, 15, 20, 27, 29, 40, 49, 51, 58, 60, 68, 78, 84, 87, 93, 99, 102, 107, 109, 112, 116, 119, 122, 132, 141, 159, 163, 176, 186, 190, 206, 208, 211, 215, 217, 231, 233, 237]
