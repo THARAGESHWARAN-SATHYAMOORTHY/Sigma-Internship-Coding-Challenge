@@ -1,6 +1,6 @@
 # Sigma-Internship-Coding-Challenge
 
-# MarketModel Readme
+# MarketModel AAPL
 
 ### Overview
 
