@@ -6,7 +6,7 @@
 
 The `MarketModel` class is designed to perform market analysis and simulate a basic trading strategy based on historical stock price data. The `MarketModel` class utilizes the QuantRocket API for fetching historical price data and Pandas/Numpy for data manipulation and analysis. The primary goal is to demonstrate a simple trading strategy simulation based on predefined market states.
 
-### Class Initialization
+Class Initialization
 
 ```python
 __init__(ticker, start_date, end_date)
@@ -18,47 +18,29 @@ __init__(ticker, start_date, end_date)
 
 This method initializes the `MarketModel` class with the specified stock ticker and date range. It also sets up essential variables for subsequent analysis.
 
-### Data Fetching
+Data Fetching
 
-```python
-fetch_data()
-```
-This method fetches historical price data for the specified stock using QuantRocket. It retrieves daily closing prices from the 'usstock-free-1d' universe within the given date range.
+fetch_data() : Fetches historical stock prices from QuantRocket.
 
-### Returns Calculation
+Returns Calculation
 
-```python
-calculate_returns()
-```
-Calculates daily returns based on the closing prices obtained from the fetched historical data. It uses the Pandas library to compute the percentage change in closing prices.
+calculate_returns() : Calculates daily returns based on closing prices.
 
-### State Classification
+State Classification
 
-```python
-classify_states()
-```
-Classifies market states as Bear, Flat, or Bull based on predefined thresholds. It uses Numpy to categorize states according to the calculated daily returns.
+classify_states() : Classifies market states as Bear, Flat, or Bull.
 
-### Value Function Implementation
+Value Function Implementation
 
-```python
-implement_value_function()
-```
-Implements a basic value function to simulate a simple trading strategy. The function is executed over the classified market states, resulting in decisions such as buying or selling. The method also tracks the portfolio value and optimal buying indices.
+implement_value_function() : Implements a basic trading strategy value function.
 
-### Transition Distribution Calculation
+Transition Distribution Calculation
 
-```python
-calculate_transition_distribution()
-```
-Calculates transition distributions between different market states. It uses Numpy to compute the transition probabilities based on the occurrences of state transitions.
+calculate_transition_distribution() : Calculates transition distributions between market states.
 
-### Results Printing
+Results Printing
 
-```python
-print_results()
-```
-Prints the final portfolio value, optimal buy indices, and the calculated transition distribution. It provides insights into the performance and behavior of the simulated trading strategy.
+print_results() : Prints portfolio value, optimal buy indices, and transition distribution.
 
 Example usage of the model:
 
