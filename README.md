@@ -42,3 +42,26 @@ This method initializes the `MarketModel` class with the specified stock ticker 
     Bear  0.138889  0.722222  0.138889
     Flat  0.146497  0.598726  0.254777
     Bull  0.125000  0.678571  0.196429
+
+### ALGORITHM USING DP TO FIND MAXIMAL OPTIMAL INDEX:
+
+To find the most optimal [index, portfolio] values using dynamic programming, you can follow these steps:
+
+Define the problem:
+- Define a function OptimalPortfolio(i), which represents the maximum portfolio value achievable up to index i.
+- Goal: Maximize the portfolio value, considering both increasing and decreasing sequences.
+
+Initialize:
+- Initialize an array DP of size equal to the number of elements in the input list.
+- Set DP[0] to the portfolio value at index 0.
+
+Recurrence relation:
+- For each index i from 1 to n-1 (where n is the number of elements in the input list):
+  - Iterate over all indices j < i.
+  - If the portfolio value at index i is greater than or equal to the portfolio value at index j, update DP[i] to the maximum of DP[i] and DP[j] + portfolio value at index i.
+
+Trace back the optimal solution:
+- After computing DP for all indices:
+  - Trace back the optimal solution by starting from the index with the highest DP value.
+  - Keep track of the indices in the optimal solution.
+
