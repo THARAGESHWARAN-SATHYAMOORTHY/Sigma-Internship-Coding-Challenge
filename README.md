@@ -6,7 +6,7 @@
 
 The `MarketModel` class is designed to perform market analysis and simulate a basic trading strategy based on historical stock price data. The `MarketModel` class utilizes the QuantRocket API for fetching historical price data and Pandas/Numpy for data manipulation and analysis. The primary goal is to demonstrate a simple trading strategy simulation based on predefined market states.
 
-## Class Initialization
+### Class Initialization
 
 ```python
 __init__(ticker, start_date, end_date)
