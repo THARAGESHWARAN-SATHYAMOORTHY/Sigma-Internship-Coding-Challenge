@@ -16,7 +16,7 @@ Class Initialization
 
 This method initializes the `MarketModel` class with the specified stock ticker and date range. It also sets up essential variables for subsequent analysis.
 
-Data Fetching `fetch_data()` : Fetches historical stock prices from QuantRocket.
+ - Data Fetching `fetch_data()` : Fetches historical stock prices from QuantRocket.
 
 Returns Calculation `calculate_returns()` : Calculates daily returns based on closing prices.
 
