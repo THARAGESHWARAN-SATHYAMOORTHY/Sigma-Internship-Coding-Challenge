@@ -16,17 +16,17 @@ Class Initialization
 
 This method initializes the `MarketModel` class with the specified stock ticker and date range. It also sets up essential variables for subsequent analysis.
 
- - Data Fetching `fetch_data()` : Fetches historical stock prices from QuantRocket.
+     - Data Fetching `fetch_data()` : Fetches historical stock prices from QuantRocket.
 
-Returns Calculation `calculate_returns()` : Calculates daily returns based on closing prices.
+     - Returns Calculation `calculate_returns()` : Calculates daily returns based on closing prices.
 
-State Classification `classify_states()` : Classifies market states as Bear, Flat, or Bull.
+     - State Classification `classify_states()` : Classifies market states as Bear, Flat, or Bull.
 
-Value Function Implementation `implement_value_function()` : Implements a basic trading strategy value function.
+     - Value Function Implementation `implement_value_function()` : Implements a basic trading strategy value function.
 
-Transition Distribution Calculation `calculate_transition_distribution()` : Calculates transition distributions between market states.
+     - Transition Distribution Calculation `calculate_transition_distribution()` : Calculates transition distributions between market states.
 
-Results Printing `print_results()` : Prints portfolio value, optimal buy indices, and transition distribution.
+     - Results Printing `print_results()` : Prints portfolio value, optimal buy indices, and transition distribution.
 
 Example usage of the model:
 
