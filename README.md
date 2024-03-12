@@ -8,11 +8,11 @@ The `MarketModel` class is designed to perform market analysis and simulate a ba
 
 ### Class Initialization
 
-    __init__(ticker, start_date, end_date)
-    
-    - **ticker**: Stock ticker symbol (e.g., 'FIBBG000B9XRY4').
-    - **start_date**: Start date for historical data (e.g., '2023-01-01').
-    - **end_date**: End date for historical data (e.g., '2023-12-31').
+__init__(ticker, start_date, end_date)
+
+- **ticker**: Stock ticker symbol (e.g., 'FIBBG000B9XRY4').
+- **start_date**: Start date for historical data (e.g., '2023-01-01').
+- **end_date**: End date for historical data (e.g., '2023-12-31').
 
 This method initializes the `MarketModel` class with the specified stock ticker and date range. It also sets up essential variables for subsequent analysis.
 
