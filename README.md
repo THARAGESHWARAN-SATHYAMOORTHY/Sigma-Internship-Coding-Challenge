@@ -23,7 +23,6 @@ This method initializes the `PortfolioOptimizer` class with the specified stock 
 #### Example usage of the model:
 
 ```python
-if __name__ == "__main__":
     portfolio_optimizer = PortfolioOptimizer('FIBBG000B9XRY4', '2023-01-01', '2023-12-31')
     portfolio_optimizer.download_data()
     portfolio_optimizer.calculate_returns()
@@ -60,78 +59,78 @@ if __name__ == "__main__":
 ### Pseudocode:
 
 ```python
-        function ViterbiOptimalIndex(states, init, trans, emit, obs) is
-            input states: S hidden states
-            input init: initial probabilities of each state
-            input trans: S × S transition matrix
-            input emit: S × O emission matrix
-            input obs: sequence of T observations
-        
-            prob ← T × S matrix of zeroes
-            prev ← empty T × S matrix
-            portfolio_value ← 0
-            optimal_buy_indices ← empty array
-            
-            for each state s in states do
-                prob[0][s] = init[s] * emit[s][obs[0]]
-            end
-            
-            for t = 1 to T - 1 do
-                for each state s in states do
-                    max_prob ← 0
-                    max_state ← -1
-                    for each state r in states do
-                        new_prob ← prob[t - 1][r] * trans[r][s] * emit[s][obs[t]]
-                        if new_prob > max_prob then
-                            max_prob ← new_prob
-                            max_state ← r
-                        end
-                    end
-                    prob[t][s] ← max_prob
-                    prev[t][s] ← max_state
+function ViterbiOptimalIndex(states, init, trans, emit, obs) is
+    input states: S hidden states
+    input init: initial probabilities of each state
+    input trans: S × S transition matrix
+    input emit: S × O emission matrix
+    input obs: sequence of T observations
+
+    prob ← T × S matrix of zeroes
+    prev ← empty T × S matrix
+    portfolio_value ← 0
+    optimal_buy_indices ← empty array
+    
+    for each state s in states do
+        prob[0][s] = init[s] * emit[s][obs[0]]
+    end
+    
+    for t = 1 to T - 1 do
+        for each state s in states do
+            max_prob ← 0
+            max_state ← -1
+            for each state r in states do
+                new_prob ← prob[t - 1][r] * trans[r][s] * emit[s][obs[t]]
+                if new_prob > max_prob then
+                    max_prob ← new_prob
+                    max_state ← r
                 end
             end
-            
-            max_prob_last_state ← 0
-            max_state_last_state ← -1
-            for each state s in states do
-                if prob[T - 1][s] > max_prob_last_state then
-                    max_prob_last_state ← prob[T - 1][s]
-                    max_state_last_state ← s
-                end
-            end
-            
-            path ← empty array of length T
-            path[T - 1] ← max_state_last_state
-            for t = T - 1 to 1 do
-                path[t - 1] ← prev[t][path[t]]
-            end
-            
-            state_transitions ← S × S matrix of zeroes
-            for i = 1 to T - 1 do
-                if path[i] == 1 and path[i - 1] == 0 and trans[1][2] > trans[1][0] then
-                    portfolio_value ← portfolio_value + 1
-                    optimal_buy_indices.append(i - 1)
-                    state_transitions[path[i - 1] + 1][path[i] + 1] ← state_transitions[path[i - 1] + 1][path[i] + 1] + 1
-                elseif path[i] == -1 and path[i - 1] == 0 and trans[0][1] > trans[0][2] then
-                    portfolio_value ← portfolio_value - 1
-                    state_transitions[path[i - 1] + 1][path[i] + 1] ← state_transitions[path[i - 1] + 1][path[i] + 1] + 1
-                else
-                    state_transitions[path[i - 1] + 1][path[i] + 1] ← state_transitions[path[i - 1] + 1][path[i] + 1] + 1
-                    continue
-                end
-            end
-            
-            transition_distribution ← S × S matrix of zeroes
-            for i = 0 to S - 1 do
-                total_sum ← sum of elements in state_transitions[i]
-                for j = 0 to S - 1 do
-                    transition_distribution[i][j] ← state_transitions[i][j] / total_sum
-                end
-            end
-            
-            return portfolio_value, optimal_buy_indices, transition_distribution
+            prob[t][s] ← max_prob
+            prev[t][s] ← max_state
         end
+    end
+    
+    max_prob_last_state ← 0
+    max_state_last_state ← -1
+    for each state s in states do
+        if prob[T - 1][s] > max_prob_last_state then
+            max_prob_last_state ← prob[T - 1][s]
+            max_state_last_state ← s
+        end
+    end
+    
+    path ← empty array of length T
+    path[T - 1] ← max_state_last_state
+    for t = T - 1 to 1 do
+        path[t - 1] ← prev[t][path[t]]
+    end
+    
+    state_transitions ← S × S matrix of zeroes
+    for i = 1 to T - 1 do
+        if path[i] == 1 and path[i - 1] == 0 and trans[1][2] > trans[1][0] then
+            portfolio_value ← portfolio_value + 1
+            optimal_buy_indices.append(i - 1)
+            state_transitions[path[i - 1] + 1][path[i] + 1] ← state_transitions[path[i - 1] + 1][path[i] + 1] + 1
+        elseif path[i] == -1 and path[i - 1] == 0 and trans[0][1] > trans[0][2] then
+            portfolio_value ← portfolio_value - 1
+            state_transitions[path[i - 1] + 1][path[i] + 1] ← state_transitions[path[i - 1] + 1][path[i] + 1] + 1
+        else
+            state_transitions[path[i - 1] + 1][path[i] + 1] ← state_transitions[path[i - 1] + 1][path[i] + 1] + 1
+            continue
+        end
+    end
+    
+    transition_distribution ← S × S matrix of zeroes
+    for i = 0 to S - 1 do
+        total_sum ← sum of elements in state_transitions[i]
+        for j = 0 to S - 1 do
+            transition_distribution[i][j] ← state_transitions[i][j] / total_sum
+        end
+    end
+    
+    return portfolio_value, optimal_buy_indices, transition_distribution
+end
 ```
 
 ### Algorithm to find the Maximal optimal index:
