@@ -1,6 +1,6 @@
 # Sigma-Internship-Coding-Challenge
 
-### PortfolioOptimizer README
+### PortfolioOptimizer
 
 The `PortfolioOptimizer` class is designed to optimize a trading portfolio based on historical stock price data. It utilizes the QuantRocket API for fetching historical price data and Pandas/Numpy for data manipulation and analysis. The class aims to demonstrate a basic portfolio optimization strategy based on predefined market states.
 
