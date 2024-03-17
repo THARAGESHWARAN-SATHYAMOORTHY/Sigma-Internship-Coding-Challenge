@@ -43,7 +43,7 @@ This method initializes the `MarketModel` class with the specified stock ticker 
     Flat  0.146497  0.598726  0.254777
     Bull  0.125000  0.678571  0.196429
 
-### ALGORITHM USING DP TO FIND MAXIMAL OPTIMAL INDEX:
+### Algorithm to find the Maximal optimal index:
 
 To find the most optimal [index, portfolio] values using dynamic programming, you can follow these steps:
 
