@@ -34,6 +34,7 @@ if __name__ == "__main__":
 
 ### Output:
 
+```python
     Portfolio Value: 17
     Optimal Index: [7, 11, 15, 20, 27, 29, 40, 49, 51, 58, 60, 68, 78, 84, 87, 93, 99, 102, 107, 109, 112, 116, 119, 122, 132, 141, 159, 163, 176, 186, 190, 206, 208, 211, 215, 217, 231, 233, 237]
     Length: 39
@@ -42,7 +43,7 @@ if __name__ == "__main__":
     Bear  0.138889  0.722222  0.138889
     Flat  0.146497  0.598726  0.254777
     Bull  0.125000  0.678571  0.196429
-
+```
 ### Algorithm to find the Maximal optimal index:
 
 To find the most optimal [index, portfolio] values using dynamic programming, you can follow these steps:
