@@ -44,7 +44,7 @@ This method initializes the `PortfolioOptimizer` class with the specified stock 
     Bull  0.125000  0.678571  0.196429
 ```
 
-### Algorithm: Viterbi Portfolio Optimization
+### 1. Algorithm: Viterbi Portfolio Optimization (HMM)
 
 **1. Systematic Decision-Making:** Utilize historical market data and current trends to make structured buy order decisions. The algorithm efficiently navigates a Hidden Markov Model to determine the most profitable sequence of trades.
 
@@ -133,7 +133,7 @@ function ViterbiOptimalIndex(states, init, trans, emit, obs) is
 end
 ```
 
-### Algorithm to find the Maximal optimal index:
+### 2. Algorithm to find the Maximal optimal index:
 
 To find the most optimal [index, portfolio] values using dynamic programming, you can follow these steps:
 
@@ -155,3 +155,28 @@ Trace back the optimal solution:
   - Trace back the optimal solution by starting from the index with the highest DP value.
   - Keep track of the indices in the optimal solution.
 
+### Pseudocode:
+```python
+Algorithm find_optimal_index(lst):
+    Input: lst - a list of tuples where each tuple contains the index and the portfolio value
+    Output: optimal_indices - a list of indices representing the maximal optimal index
+
+    n <- length of lst
+    DP <- array of size n initialized with zeros
+    indices <- array of n lists, each list initialized with an empty list
+
+    for i from 0 to n-1 do:
+        DP[i] <- portfolio value at index i
+        indices[i].append(i)
+        
+        for j from 0 to i-1 do:
+            if portfolio value at index i > portfolio value at index j then:
+                if DP[j] + portfolio value at index i > DP[i] then:
+                    DP[i] <- DP[j] + portfolio value at index i
+                    indices[i] <- copy of indices[j] appended with i
+    
+    max_index <- index of the maximum value in DP
+    optimal_indices <- indices[max_index]
+    
+    return optimal_indices
+```
