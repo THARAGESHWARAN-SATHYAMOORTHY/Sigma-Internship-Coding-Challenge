@@ -46,15 +46,7 @@ This method initializes the `PortfolioOptimizer` class with the specified stock 
 
 ### 1. Algorithm: Viterbi Portfolio Optimization (HMM)
 
-**1. Systematic Decision-Making:** Utilize historical market data and current trends to make structured buy order decisions. The algorithm efficiently navigates a Hidden Markov Model to determine the most profitable sequence of trades.
-
-**2. Efficiency with Dynamic Programming:** Optimize computational efficiency by employing dynamic programming techniques. Avoid redundant calculations and compute the optimal path through market states, ensuring each decision considers past observations.
-
-**3. Real-Time Decision Support:** Provide real-time decision support for buy orders by operating in a streaming manner. Continuously update transition distribution to adapt to changing market conditions, offering timely insights into optimal buying opportunities.
-
-**4. Maximizing Portfolio Value:** Strategically place buy orders to maximize portfolio value. Accurately identify transitions between market states and their impact on portfolio value, aiding in informed investment decisions.
-
-**5. Scalability and Adaptability:** Scale to handle large datasets and adapt to diverse market conditions. Customize parameters and incorporate additional factors to cater to varying investment strategies, enhancing utility across different trading scenarios.
+Utilize historical market data and current trends to make structured buy order decisions. The algorithm efficiently navigates a Hidden Markov Model to determine the most profitable sequence of trades. Optimize computational efficiency by employing dynamic programming techniques. Avoid redundant calculations and compute the optimal path through market states, ensuring each decision considers past observations. Provide real-time decision support for buy orders by operating in a streaming manner. Continuously update transition distribution to adapt to changing market conditions, offering timely insights into optimal buying opportunities. Strategically place buy orders to maximize portfolio value. Accurately identify transitions between market states and their impact on portfolio value, aiding in informed investment decisions.
 
 ### Pseudocode:
 
