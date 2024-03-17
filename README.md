@@ -124,6 +124,31 @@ function ViterbiOptimalIndex(states, init, trans, emit, obs) is
     return portfolio_value, optimal_buy_indices, transition_distribution
 end
 ```
+
+### Example Usage:
+
+```python
+    start_date = '2023-01-01'
+    end_date = '2023-12-31'
+    prices = get_prices("usstock-free-1d", universes="usstock-free", start_date=start_date, end_date=end_date, fields=["Close"])
+    close_prices = prices['FIBBG000B9XRY4']
+    returns = close_prices.pct_change()
+    obs = np.where(returns >= 0.01, 1, np.where(returns > -0.01, 0, -1)).flatten()
+    stat = [-1, 0, 1]
+    init = [1/3, 1/3, 1/3]
+    trans = [[0.13888889,0.72222222,0.13888889],
+     [0.14649682,0.59872611,0.25477707],
+     [0.125,0.67857143,0.19642857]]
+    emit = [[0.7, 0.2, 0.1],
+            [0.1, 0.7, 0.2],
+            [0.2, 0.1, 0.7]]
+    portfolio_value, optimal_buy_indices, transition_distribution = ViterbiOptimalIndex(stat, init, trans, emit, obs)
+    print("\nPortfolio Value:", portfolio_value)
+    print("Optimal Buy Indices:", optimal_buy_indices)
+    print("Transition Distribution:")
+    print(transition_distribution)
+```
+
 Note : The algorithm is modified according to our convience to calculate the optimal index and portfolio value.
 
 ### 2. Algorithm to find the Maximal optimal index:
